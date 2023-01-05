@@ -1,0 +1,28 @@
+version: "3.5"
+services:
+  consumer-service:
+    container_name: consumer-service
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: docker-consumer-spring-boot:latest
+    deploy:
+      mode: replicated
+      replicas: 3
+      restart_policy:
+        max_attempts: 3
+        condition: on-failure
+    ports:
+      - 8080:8080
+  proxy:
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
+    image: nginx_proxy:v1
+    ports:
+      - 80:80
+    depends_on:
+      - consumer-service
+    deploy:
+      placement:
+        constraints: [ node.role == manager ]

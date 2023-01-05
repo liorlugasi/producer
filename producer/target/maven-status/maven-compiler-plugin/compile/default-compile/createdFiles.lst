@@ -1,0 +1,4 @@
+com\memphis\consumer\ConsumerApplication.class
+com\memphis\consumer\services\configurations\ServiceConfiguration.class
+com\memphis\consumer\services\interfaces\IConsumerService.class
+com\memphis\consumer\services\implementations\ConsumerService.class
