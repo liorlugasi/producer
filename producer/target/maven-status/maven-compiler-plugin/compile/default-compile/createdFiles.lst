@@ -1,0 +1,4 @@
+com\memphis\producer\services\interfaces\IProducerService.class
+com\memphis\producer\services\implementations\ProducerService.class
+com\memphis\producer\ProducerApplication.class
+com\memphis\producer\services\configurations\ServiceConfiguration.class
